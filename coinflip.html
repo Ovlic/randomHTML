@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <script src="style.css"></script>
+    <body>
+        <div class="topnav">
+            <a href="randomcolor.html">Random Color</a>
+            <a class="active" href="coinflip.html">Flip a Coin</a>
+            <a href="randomdice.html">Roll a Die</a>
+            <a href="yesno.html">Yes or No</a>
+            <a href="randomnumber.html">Random Number</a>
+        </div>
+
+        <div class="centerbtn">
+            <button id="button" class="thebtnclass"><center class="center">Flip Coin</center></button>
+        </div>
+        <div class="centertxt">
+            <h1 class="yesorno" id="theh1" ></h1>
+        </div>
+        <script>
+            const button = document.getElementById("button")
+            const theh1 = document.getElementById("theh1")
+            button.addEventListener("click", function(e){
+                e.preventDefault;
+                theh1.classList.remove("run-animation");
+                void theh1.offsetWidth;
+                const number = Math.floor(Math.random() * 2) + 1
+                if(number === 1) theh1.innerHTML = "Heads"
+                if(number === 2) theh1.innerHTML = "Tails"
+                
+                theh1.classList.add("run-animation");
+            }, false)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+    <script src="style.css"></script>
+    <body>
+        <div class="topnav">
+            <a href="randomcolor.html">Random Color</a>
+            <a href="coinflip.html">Flip a Coin</a>
+            <a href="randomdice.html">Roll a Die</a>
+            <a href="yesno.html">Yes or No</a>
+            <a class="active" href="randomnumber.html">Random Number</a>
+        </div>
+
+        <div class="centerform">
+        <form id="thenumber" style="font-size: 20px;">
+            <label for="pickednumber">Random number between</label>
+            <input type="number" id="pickednumber" name="pickednumber" value="10" onClick="this.select();"> <input type="submit" value="Generate">
+        </form>
+        </div>
+        <div class="centertxt">
+            <h1 class="yesorno" id="theh1"></h1>
+        </div>
+        <script>
+            const numberform = document.getElementById("thenumber")
+            const pickednumber = document.getElementById("pickednumber")
+            const element2 = document.getElementById("theh1")
+            element2.innerHTML = Math.floor(Math.random() * 10) + 1
+
+            numberform.onsubmit = function (e){
+                e.preventDefault;
+                element2.classList.remove("run-animation");
+                void element2.offsetWidth;
+                const number = Math.floor(Math.random() * Number(pickednumber.value)) + 1
+                element2.innerHTML = number
+                element2.classList.add("run-animation");
+                return false;
+            }
+        </script>
+    </body>
+</html>
