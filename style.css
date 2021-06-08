@@ -170,7 +170,7 @@
     background-color: #ddd;
     color: black;
 }
-.topnav_a.active {
+.topnav .active {
     background-color: #04AA6D;
     color: white;
 }
